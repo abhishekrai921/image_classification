@@ -22,12 +22,19 @@ function gotResults(error, results) {
 function setup() {
     createCanvas(640, 550);
     // ml5 to create video capture
-    video = createCapture(VIDEO);
+    var constraints = {
+		audio: false,
+		video: {
+			facingMode: "environment"
+		}
+	};
+	video = createCapture(constraints);
     video.hide();
-    background(0);
+    background(100);
     // load the MobileNet and apply it on video feed
     mobilenet = ml5.imageClassifier('MobileNet', video, modelReady);
 }
+
 
 function draw() {
     background(0);
