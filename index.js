@@ -39,7 +39,7 @@ function setup() {
 function draw() {
     background(0);
     // show video 
-    image(video, 0, 0);
+    image(video, 0, 0, 640, 480);
     fill(255);
     textSize(32);
     // show prediction label 
